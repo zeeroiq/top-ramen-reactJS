@@ -1,0 +1,60 @@
+import React, { useState, useEffect } from "react";
+import shortid from "shortid";
+import Products from "./Products"
+
+function MyComponent(){
+
+    const [error, setError] = useState(null);
+    const [isLoaded, setIsLoaded] = useState(false);
+    const [items, setItems] = useState([]);
+
+
+    useEffect(() => {
+        
+        fetch("http://starlord.hackerearth.com/TopRamen")
+        .then(res => res.json())
+        .then(
+            result => {
+                setIsLoaded(true);
+                setItems(result);
+            },
+
+            error => {
+                setIsLoaded(true);
+                setError(error);
+            }
+        )
+    }, []) // marks this effect will run only once.
+
+    if(error) {
+        return <div>
+            Error: {error.message}
+        </div>
+    }
+    else if(!isLoaded) {
+        return <div>
+            Loading...
+        </div>
+    }
+    else {
+        console.log("Items: ", items);
+        // return <p>Check </p>;
+        return (
+            <div className="row">
+                
+                    { items.map(item => <Products key={shortid.generate()} 
+                                            brand={item.Brand} 
+                                            variety={item.Variety}
+                                            style={item.Style}
+                                            country={item.Country}
+                                            stars={item.Stars}
+                                            top_ten={item["Top Ten"]}
+                                            /> ) }
+                
+            </div>
+        )
+    }
+
+}
+
+export default MyComponent;
