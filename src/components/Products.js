@@ -12,7 +12,7 @@ const productInfo = {
 function Products(props) {
     // const [brand, variety, style, country, stars, top_ten] = props
     return (
-        <div className="col-lg-4 col-md-2 col-sm-1">
+        <div className="col-lg-4 col-md-6 col-sm-1">
             <div className="card text-white bg-dark mb-3">
                 <div className="card-body">
                     <p>{props.brand}</p>
