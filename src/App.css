@@ -1,13 +1,31 @@
 body{
-  margin: 1rem;
+  margin: auto 1rem;
   background-color: #52575d;
 }
+
+.navbar-custom {
+  margin-top: 10px;
+  margin-bottom: 16px;
+}
+
+/* .form-inline {
+  position: absolute;
+  right: 16px;
+} */
 
 header {
   background-color: #f5ba13;
   margin: auto -16px;
   padding: 16px 32px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+.Logo {
+  background-image: url(./brand-logo.png);
+  width: 80px;
+  height: 30px;
+  alt: Z;
+  border-radius: 10%;
 }
 
 .card-body {
