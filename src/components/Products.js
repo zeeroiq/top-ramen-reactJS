@@ -1,13 +1,13 @@
 import React from "react";
 
-const productInfo = {
-    brand: "",
-    variety: "",
-    style: "",
-    country: "",
-    stars: "",
-    top_ten: ""
-}
+// const productInfo = {
+//     brand: "",
+//     variety: "",
+//     style: "",
+//     country: "",
+//     stars: "",
+//     top_ten: ""
+// }
 
 function Products(props) {
     // const [brand, variety, style, country, stars, top_ten] = props
