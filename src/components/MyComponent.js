@@ -4,6 +4,10 @@ import Products from "./Products"
 
 let countriesList = [];
 let set = new Set();
+// section for link constants
+const CORS_API_LINK = "https://cors-anywhere.herokuapp.com/";
+const API_LINK = "http://starlord.hackerearth.com/TopRamen";
+const LINK = CORS_API_LINK + API_LINK;
 
 function populateRespons(item) {
 
@@ -30,7 +34,7 @@ function MyComponent() {
 
     useEffect(() => {
 
-        fetch("http://starlord.hackerearth.com/TopRamen")
+        fetch(LINK)
             .then(res => res.json())
             .then(
                 result => {
