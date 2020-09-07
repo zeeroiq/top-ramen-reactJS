@@ -2,29 +2,23 @@ import React, { useState, useEffect } from "react";
 import shortid from "shortid";
 import Products from "./Products"
 
-const countriesList = []
+let countriesList = [];
+let set = new Set();
 
-let responseData = {
-    brand: "",
-    variety: "",
-    style: "",
-    country: "",
-    stars: "",
-    top_ten: ""
-}
+function populateRespons(item) {
 
-function populateCountry(item) {
-    responseData = item;
-    countriesList.push(responseData.Country);
+    countriesList.push(item.Country);
+    set.add(item.country);
 
     return (
-        <Products key={shortid.generate()}
-            brand={responseData.Brand}
-            variety={responseData.Variety}
-            style={responseData.Style}
-            country={responseData.Country}
-            stars={responseData.Stars}
-            top_ten={responseData["Top Ten"]}
+        <Products
+            key={shortid.generate()}
+            brand={item.Brand}
+            variety={item.Variety}
+            style={item.Style}
+            country={item.Country}
+            stars={item.Stars}
+            top_ten={item.top_ten}
         />);
 }
 function MyComponent() {
@@ -67,8 +61,9 @@ function MyComponent() {
         return (
             <div className="row">
 
-                {items.map(item => populateCountry(item))}
-
+                {items.map(item => populateRespons(item))}
+                {console.log("Set items are : ")}
+                {set.forEach(v => console.log(v))}
             </div>
         )
     }

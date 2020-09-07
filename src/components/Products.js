@@ -1,16 +1,8 @@
 import React from "react";
 
-// const productInfo = {
-//     brand: "",
-//     variety: "",
-//     style: "",
-//     country: "",
-//     stars: "",
-//     top_ten: ""
-// }
 
 function Products(props) {
-    // const [brand, variety, style, country, stars, top_ten] = props
+
     return (
         <div className="col-lg-4 col-md-6 col-sm-1">
             <div className="card text-white bg-dark mb-3">

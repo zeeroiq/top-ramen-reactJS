@@ -1,13 +1,13 @@
-import React from "react"
-import Home from "./Home"
-import ListCountries from "./ListCountries"
+import React from "react";
+import ListCountries from "./ListCountries";
 import {
     BrowserRouter as Router,
     Switch,
     Route,
     Link,
     Redirect
-} from "react-router-dom"
+} from "react-router-dom";
+
 
 function Header() {
 
